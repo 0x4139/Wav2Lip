@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "npm run test",
-    "docker-example-cpu": "docker run -v \"$(pwd)\"/example:/data -v \"$(pwd)\"/result:/usr/wav2lip/results 0x4139/wav2lip:v1 python inference.py --checkpoint_path checkpoints/wav2lip.pth --face /data/game.mp4 --audio /data/game.wav",
+    "docker-example-cpu": "docker run -v \"$(pwd)\"/example:/data -v \"$(pwd)\"/result:/usr/wav2lip/results 0x4139/wav2lip:latest python inference.py --checkpoint_path checkpoints/wav2lip.pth --face /data/game.mp4 --audio /data/game.wav",
     "docker-build": "docker buildx build -t docker.io/0x4139/wav2lip:latest --push -f Dockerfile --platform=linux/amd64 ."
   },
   "repository": {

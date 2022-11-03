@@ -27,7 +27,8 @@ module.exports= class Wav2Lip {
             exec(`docker run -v ${this.settings.outputDir}:/usr/wav2lip/results -v ${this.settings.inputDir}:/data  ${WAV2LIP_IMAGE} python inference.py --checkpoint_path checkpoints/wav2lip.pth --face /data/${faceFile} --audio /data/${audioFile} --outfile results/${outputFile}`,(err,stdout,stderr)=>{
                 if (err) {
                     reject({
-                        err:err
+                        err:err,
+                        stderr:stderr
                     })
                     return;
                   }
